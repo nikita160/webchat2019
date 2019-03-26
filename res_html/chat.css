@@ -1,0 +1,374 @@
+
+
+        body{
+        margin: 0;
+        padding: 0;
+        background: #2e2e1F;
+        font-family: 'Roboto', sans-serif;
+        }
+
+
+        .main{
+
+        display: flex;
+
+        }
+
+
+
+        .mainContainer{
+        display: flex;
+        position: relative;
+        background: #999966;
+        padding: 20px;
+        width: 730px;
+        margin: 20px 0 20px 0;
+
+        }
+
+
+
+
+        .left{
+        display: inline-block;
+        background: green;
+        flex-basis: 1;
+
+        }
+
+        .right{
+
+         top: 0;
+         width: 320px;
+         //background: yellow;
+         margin: 20px;
+         flex-basis: 1;
+
+         }
+
+         .right p{
+         padding-left: 25px;
+         color: #2e2e1F;
+         }
+
+         .userLogin {
+         color: #660000;
+
+
+
+         }
+
+
+        #chatbox {
+
+        width: 350px;
+        height: 500px;
+        background: #cdcdb1;
+        border: 2px solid #5d5d3c;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        #reciever {
+        color: #660000;
+        padding-left: 15px;
+        font-weight: bold;
+
+
+        }
+
+        #chatWindow {
+        position: static;
+        top: 20px;
+        background: #FFF;
+        width: 100%;
+        height: 300px;
+        overflow: auto;
+
+        }
+
+
+        .messageBox {
+
+         width: 100%;
+         margin-top: 20px;
+
+
+         }
+
+
+
+        textarea {
+        resize: none;
+        padding: 10px;
+        margin: 0 10px 5px 12px;
+        width: 300px;
+        min-height: 60px;
+        border: 2px solid #5d5d3c;
+        border-radius: 5px;
+        font-family: 'Roboto', sans-serif;
+        }
+
+        #sendButton {
+        margin-left: 12px;
+        width: 324px;
+        height: 25px;
+        color: #FFF;
+        padding: 3px;
+        background-color: #660000;
+        border: 0;
+        border-radius: 3px;
+        }
+
+        #sendButton:hover {
+        background-color: #AF1727;
+
+        }
+
+
+        .me {
+        margin-left: 60px;
+        margin-right: 10px;
+        background-color: #ff9999;
+        text-align: right;
+        }
+
+        .notMe {
+        margin-left: 10px;
+        margin-right: 60px;
+        background-color: #e0e0d1;
+        }
+
+
+        .me, .notMe {
+
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+
+        }
+
+
+         .msgFromHead {
+
+         font-size: 12px;
+         font-weight: bold;
+         }
+
+         .msgBodyTxt{
+         margin-top: 5px;
+         }
+
+        .contact{
+
+        margin-left: 20px;
+        border: 1px solid #ccc;
+        background-color: yellow;
+        width: 300px;
+
+        }
+
+        .contactListWrapper{
+
+        max-height: 280px;
+        overflow: auto;
+        }
+
+        .noContact{
+            margin:20px;
+        }
+
+
+        #contactList {
+        list-style-type: none;
+        padding: 0;
+        margin:0;
+        }
+
+
+        .selectResButton {
+
+          border: 1px solid #aba192;
+          margin-top: -1px; /* Prevent double borders */
+          background-color: #f6f6f6;
+          font-size: 18px;
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+
+        }
+
+        .selectResButton:hover{
+          background-color: #e0e0d1;
+        }
+
+
+
+        .noticeSymbol{
+            padding: 8px;
+            flex-basis: 14px;
+        }
+
+
+        .listName{
+            padding: 8px;
+        }
+
+        #sendAll{
+
+            top: 0;
+            display:block;
+            width: 100%;
+            background-color: red;
+            color: #FFF;
+            font-size: 18px;
+            text-align: center;
+            cursor: pointer;
+            padding: 12px;
+            text-decoration: none;
+            outline: none;
+            border: 0;
+            overflow: hidden;
+
+        }
+
+
+        #sendAll:hover{
+             background-color: #AF1727;
+        }
+
+
+        .selectResButton.active, #sendAll.active{
+          background-color: #AF1727;
+          color: #FFF;
+        }
+
+
+        .search {
+          color: red;
+          width: 100%;
+          margin: 15px;
+          display: flex;
+          //flex-direction: row;
+
+        }
+
+        #searchTerm {
+          flex-basis: 85%;
+          padding: 10px;
+          outline: none;
+          border: none;
+
+
+        }
+
+
+        .searchButton {
+          color: white;
+          background: #3385ff;
+          flex-basis: 15%;
+          border: none;
+
+        }
+
+
+        .searchButton:hover {
+            background: #0047b3;
+        }
+
+
+        .popUp {
+        position: relative;
+        background-color: #FFF;
+        flex-basis: 250px;
+        margin: 20px 0 20px 0;
+        }
+
+
+        .searchResult{
+
+        margin-top: 40px;
+        }
+
+        .btn-close {
+          color: #3385ff;
+          font-size: 20px;
+          position: absolute;
+          right: 2px;
+          top: 5px;
+          margin: 3px;
+
+        }
+
+
+        .btn-close:hover,
+        .btn-close:focus {
+            color: #0047b3;
+            cursor: pointer;
+        }
+
+        .searchResButton, .userAddMessage{
+           padding: 8px;
+           border: 1px solid #aba192;
+           margin-top: -1px; /* Prevent double borders */
+           color:  #3366ff;
+           background-color: #f6f6f6;
+           font-size: 18px;
+           cursor: pointer;
+           display: flex;
+           flex-direction: row;
+        }
+
+        .userAddMessage{
+            color:  #cce6ff;
+        }
+
+
+        .searchResButton:hover{
+            background-color:  #99b3ff;
+        }
+
+
+        #searchResultList{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .searhContactName{
+        flex-basis: 90%;
+        }
+
+         .addFriend{
+            color:  #3366ff;
+         }
+
+        .addFriend:hover{
+        color:   #002db3;
+        }
+
+        .noFriendContact{
+            color:  #cce6ff;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<serverConfig>
+    <dbDriver>h2</dbDriver>
+    <dbPort>3306</dbPort>
+    <dbName>webchat</dbName>
+    <dbLogin>root</dbLogin>
+    <dbPassword>root</dbPassword>
+    <serverPort>8080</serverPort>
+    <prefillDB>false</prefillDB>
+</serverConfig>

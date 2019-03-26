@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Chat</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+
+<div class="main">
+
+    <div class="mainContainer">
+        <div class="left">
+            <div id="chatbox">
+                <p id="reciever">.</p>
+
+                <div id="chatWindow">
+
+                    <div class="me">
+                        <div class="msgFromHead">kot</div>
+                        <div class="msgBodyTxt">Hello!</div>
+                    </div>
+                    <div class="notMe">
+                        <div class="msgFromHead">kot</div>
+                        <div class="msgBodyTxt">Heljso!</div>
+                    </div>
+
+
+                </div>
+
+                <div class="messageBox">
+                    <form onkeydown="if(event.keyCode==13){init.sendMessage()}">
+                        <textarea id="typeArea" placeholder="Type message.." required></textarea>
+                        <input id="sendButton" type="button" value="Send message!" onclick="init.sendMessage();">
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="right">
+            <p>
+                <span>
+                    <#if isAnonymous>
+                        <span>You are an anonymous </span><span class="userLogin"></span><a class="loginLogout"
+                                                                                            href="/auth">Login</a>
+                        <#else>
+                            <span>You are logged as </span><span class="userLogin">.</span><a class="loginLogout"
+                                                                                              href="/logout">Exit</a>
+                    </#if>
+
+                </span>
+            </p>
+
+            <div class="contact">
+
+                <div>
+                    <button id="sendAll" data-contact-name="sendAll" onclick="init.selectReciever(event);"></button>
+                </div>
+                <#if !isAnonymous>
+                    <div class="contactListWrapper">
+                        <ul id="contactList">
+
+                            <li class="emptyLi" style="display: none">
+                                <div class="selectResButton contactPos" onclick="init.selectReciever(event);">
+                                    <div class="noticeSymbol"><i class="fas fa-envelope"></i></div>
+                                    <div class="listName"></div>
+                                </div>
+                            </li>
+
+
+                            <#if users??>
+
+                                <#list users>
+
+                                    <#items as user>
+                                        <li>
+                                            <div data-contact-name="${user}" class="selectResButton"
+                                                 onclick="init.selectReciever(event);">
+                                                <div class="noticeSymbol"><i class="fas fa-envelope"></i></div>
+                                                <div class="listName">${user}</div>
+                                            </div>
+                                        </li>
+
+                                    </#items>
+
+                                    <#else>
+                                        <p class="noContact">You haven't any contacts yet!</p>
+                                </#list>
+
+                        </ul>
+                    </div>
+                </#if>
+
+                <#else>
+                    <p class="noContact">You are unauthorized, so you can talk only in common chat!</p>
+
+                    </#if>
+
+
+            </div>
+
+            <#if !isAnonymous>
+
+            <div class="search">
+                <input type="text" id="searchTerm" placeholder="Find friend...">
+                <button type="button" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+
+            </#if>
+
+        </div>
+
+
+    </div>
+
+    <div class="popUp">
+        <div class="btn-close">&times;</div>
+        <div class="searchResult">
+            <span id="srchResMsg"><i class="fa fa-search"> No result found</i></span>
+            <ul id="searchResultList">
+                <li class="emptyLi">
+                    <div class="searchResButton" data-contact-name="" onclick="init.selectReciever(event);">
+                        <div class="searhContactName"></div>
+                        <div class="addFriend" title="Add a friend" onclick="addContact(event);"><i
+                                class="fa fa-user-plus" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="userAddMessage" style="display:none;">User added</div>
+                </li>
+            </ul>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- users contact list -->
+
+
+<script>
+        var username = '${username}';
+        var init;
+        var els = document.getElementsByClassName("userLogin");
+        els[0].innerHTML=username+' ';
+        var sendAllBtnValue = 'Push to write the common chat!';
+        document.getElementById('sendAll').innerHTML=sendAllBtnValue;
+
+
+
+
+</script>
+
+<script>
+
+
+        var hideNotice = function(item){
+            var notice = document.getElementById(item);
+            if (notice!=null) {
+                notice.children[0].style.display = 'none';
+            }
+        }
+
+        var hideAllNotices = function hideNotices(){
+            var notices = document.getElementsByClassName('noticeSymbol');
+            if (notices.length>0){
+                Array.from(notices).forEach(function(item, i, arr){
+                    item.style.display = 'none';
+                });
+             }
+        }
+
+
+</script>
+
+<script src="init.js"></script>
+<script src="service.js"></script>
+<script src="ajax.js"></script>
+
+
+
+</body>
+</html>

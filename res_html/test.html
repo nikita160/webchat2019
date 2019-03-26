@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Websocket Chat Application</title>
+    <style>
+
+        #list{
+        padding: 25px;
+        }
+
+
+        a:link,
+        a:visited{
+        width: 160px;
+        background-color: white;
+        color: #339933;
+        border: 1px solid #339933;
+        border-bottom: none;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+
+        }
+
+
+
+        a:hover,
+        a:focus{
+
+        background-color: #339933;
+        color: white;
+        }
+
+
+        .contact{
+        position: relative;
+        margin: 5% auto;
+        width: 400px;
+        height: 350px;
+        background: #FFF;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+        }
+
+
+
+    </style>
+
+    <script>
+
+        var id = "kkk";
+
+        var printname = function (name){
+            document.getElementById(id).innerHTML = name;
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+    <p id="kkk">Сок</p>
+
+
+    <div class="contact">
+        <ul id="list">
+            <li>
+                <a href="#" onclick="printname('nikita');">Nikita</a>
+            </li>
+            <li>
+                <a href="#" onclick="printname('kot');">kot</a>
+            </li>
+
+        </ul>
+    </div>
+
+
+
+</body>
+</html>
